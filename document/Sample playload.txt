@@ -1,0 +1,36 @@
+<soapenv:Envelope xmlns:com="http://dsg.dubai.gov.ae/schema/common" xmlns:epay="http://dsg.dubai.gov.ae/schema/epay" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+<soapenv:Header>
+<wsse:Security soapenv:mustUnderstand="1" xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+<wsu:Timestamp wsu:Id="TS-5">
+<wsu:Created>2021-10-19T15:54:05.549Z</wsu:Created>
+<wsu:Expires>2021-10-19T17:34:05.549Z</wsu:Expires>
+</wsu:Timestamp>
+</wsse:Security>
+</soapenv:Header>
+<soapenv:Body>
+<epay:generateTransactionToken>
+<epay:transactionInfo>
+<epay:spCode>ZFND</epay:spCode>
+<epay:servCode>zakat</epay:servCode>
+<epay:sptrn>123539847427</epay:sptrn>
+<epay:amount currency="AED">10.00</epay:amount>
+<epay:timestamp>2021-10-21T16:50:07+05:30</epay:timestamp>
+<epay:description>Test Transaction</epay:description>
+<epay:type>sale</epay:type>
+<epay:versionCode>2.1</epay:versionCode>
+<epay:paymentChannel>100</epay:paymentChannel>
+</epay:transactionInfo>
+<epay:userInfo>
+<epay:isAuthenticated>false</epay:isAuthenticated>
+<epay:userId>32396</epay:userId>
+<epay:userName>tester001</epay:userName>
+<epay:fullNameEn>ing-e ca VanNister</epay:fullNameEn>
+<epay:fullNameAr>first mid last</epay:fullNameAr>
+<epay:mobileNo>97150332968</epay:mobileNo>
+<epay:email>tstuser0@rta.com</epay:email>
+<epay:emirateCode>DXB</epay:emirateCode>
+<epay:poBox>PO</epay:poBox>
+</epay:userInfo>
+</epay:generateTransactionToken>
+</soapenv:Body>
+</soapenv:Envelope>

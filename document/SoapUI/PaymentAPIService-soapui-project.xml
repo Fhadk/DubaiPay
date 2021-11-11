@@ -1,0 +1,594 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="1ef119cf-d820-4868-ac5e-44cd3e40712a" activeEnvironment="Default" name="PaymentAPIService" resourceRoot="${projectDir}" soapui-version="5.6.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="8b0e92a0-839c-406c-815a-95edd88f1a5f" wsaVersion="NONE" name="PaymentAPIServicePortBinding" type="wsdl" bindingName="{http://dsg.dubai.gov.ae/ws/epay}PaymentAPIServicePortBinding" soapVersion="1_1" anonymous="optional" definition="https://epayment.qa.dubai.ae/ePayHub/WSDL/PaymentAPIService.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.actions.iface.tools.cxf.CXFAction@values-local"><![CDATA[<xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  <con:entry key="Output Directory" value=""/>
+  <con:entry key="Server" value="false"/>
+  <con:entry key="EXSH" value="false"/>
+  <con:entry key="DNS" value="true"/>
+  <con:entry key="Class Folder" value=""/>
+  <con:entry key="WSDL" value="https://epayment.qa.dubai.ae/ePayHub/WSDL/PaymentAPIService.wsdl"/>
+  <con:entry key="Output Packages" value="&lt;xml-fragment/>"/>
+  <con:entry key="Compile" value="false"/>
+  <con:entry key="Bindings" value=""/>
+  <con:entry key="Implementation" value="false"/>
+  <con:entry key="Catalog" value=""/>
+  <con:entry key="Use cached WSDL" value="true"/>
+  <con:entry key="Exclude namespaces" value="&lt;xml-fragment/>"/>
+  <con:entry key="DEX" value="true"/>
+  <con:entry key="All Code" value="false"/>
+  <con:entry key="build.xml" value="false"/>
+  <con:entry key="Validate WSDL" value="false"/>
+  <con:entry key="Java Args" value=""/>
+  <con:entry key="Package" value=""/>
+  <con:entry key="Client" value="false"/>
+  <con:entry key="Tool Args" value=""/>
+</xml-fragment>]]></con:setting><con:setting id="com.eviware.soapui.impl.wsdl.actions.iface.tools.wsimport.WSImportAction@values-local"><![CDATA[<xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  <con:entry key="wsdlLocation" value=""/>
+  <con:entry key="Use cached WSDL" value="true"/>
+  <con:entry key="Keep" value="false"/>
+  <con:entry key="Source Directory" value=""/>
+  <con:entry key="Package" value=""/>
+  <con:entry key="Binding files" value=""/>
+  <con:entry key="WSDL" value="https://epayment.qa.dubai.ae/ePayHub/WSDL/PaymentAPIService.wsdl"/>
+  <con:entry key="Target Directory" value=""/>
+  <con:entry key="Tool Args" value=""/>
+  <con:entry key="Catalog" value=""/>
+  <con:entry key="HTTP Proxy" value=""/>
+</xml-fragment>]]></con:setting><con:setting id="com.eviware.soapui.impl.wsdl.actions.iface.tools.axis2.Axis2WSDL2CodeAction@values-local"><![CDATA[<xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  <con:entry key="generate all" value="false"/>
+  <con:entry key="Output Directory" value="C:\D\workspace\DubaiPay"/>
+  <con:entry key="service descriptor" value="false"/>
+  <con:entry key="server-side" value="false"/>
+  <con:entry key="JIBX bindingfile" value=""/>
+  <con:entry key="adb writeClasses" value="false"/>
+  <con:entry key="unpack classes" value="false"/>
+  <con:entry key="adb wrapClasses" value="false"/>
+  <con:entry key="namespace mapping" value="&lt;xml-fragment/>"/>
+  <con:entry key="test-case" value="false"/>
+  <con:entry key="serverside-interface" value="false"/>
+  <con:entry key="port name" value="PaymentAPIServicePort"/>
+  <con:entry key="WSDL" value="https://epayment.qa.dubai.ae/ePayHub/WSDL/PaymentAPIService.wsdl"/>
+  <con:entry key="sync" value="true"/>
+  <con:entry key="service name" value="PaymentAPIService"/>
+  <con:entry key="async" value="false"/>
+  <con:entry key="Use cached WSDL" value="true"/>
+  <con:entry key="databinding method" value="adb"/>
+  <con:entry key="Package" value="com.soultion"/>
+  <con:entry key="Tool Args" value=""/>
+</xml-fragment>]]></con:setting></con:settings><con:definitionCache type="TEXT" rootPart="https://epayment.qa.dubai.ae/ePayHub/WSDL/PaymentAPIService.wsdl"><con:part><con:url>https://epayment.qa.dubai.ae/ePayHub/WSDL/PaymentAPIService.wsdl</con:url><con:content><![CDATA[<definitions name="PaymentAPIService" targetNamespace="http://dsg.dubai.gov.ae/ws/epay" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:tns="http://dsg.dubai.gov.ae/ws/epay" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns6="http://dsg.dubai.gov.ae/schema/epay" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+  <wsp:Policy wsu:Id="SignEncr">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:AsymmetricBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:InitiatorToken>
+              <wsp:Policy>
+                <sp:X509Token sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+                  <wsp:Policy>
+                    <sp:RequireKeyIdentifierReference/>
+                    <sp:WssX509V3Token10/>
+                  </wsp:Policy>
+                </sp:X509Token>
+              </wsp:Policy>
+            </sp:InitiatorToken>
+            <sp:RecipientToken>
+              <wsp:Policy>
+                <sp:X509Token sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/Never">
+                  <wsp:Policy>
+                    <sp:RequireKeyIdentifierReference/>
+                    <sp:WssX509V3Token10/>
+                  </wsp:Policy>
+                </sp:X509Token>
+              </wsp:Policy>
+            </sp:RecipientToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256/>
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict/>
+              </wsp:Policy>
+            </sp:Layout>
+            <sp:IncludeTimestamp/>
+            <sp:OnlySignEntireHeadersAndBody/>
+          </wsp:Policy>
+        </sp:AsymmetricBinding>
+        <sp:Wss10 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:MustSupportRefKeyIdentifier/>
+            <sp:MustSupportRefIssuerSerial/>
+          </wsp:Policy>
+        </sp:Wss10>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body/>
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body/>
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <types>
+    <xsd:schema>
+      <xsd:import namespace="http://dsg.dubai.gov.ae/schema/epay" schemaLocation="https://epayment.qa.dubai.ae/ePayHub/WSDL/epay_schema.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://dsg.dubai.gov.ae/schema/common" schemaLocation="https://epayment.qa.dubai.ae/ePayHub/WSDL/common_types.xsd"/>
+    </xsd:schema>
+  </types>
+  <message name="confirmServiceDeliveryResponse">
+    <part name="confirmServiceDeliveryResponse" element="ns6:confirmServiceDeliveryResponse"></part>
+  </message>
+  <message name="getResponseTokenDetailsResponse">
+    <part name="getResponseTokenDetailsResponse" element="ns6:getResponseTokenDetailsResponse"></part>
+  </message>
+  <message name="generateTransactionTokenResponse">
+    <part name="generateTransactionTokenResponse" element="ns6:generateTransactionTokenResponse"></part>
+  </message>
+  <message name="echoResponse">
+    <part name="echoResponse" element="ns6:echoResponse"></part>
+  </message>
+  <message name="echo">
+    <part name="echo" element="ns6:echo"></part>
+  </message>
+  <message name="confirmServiceDelivery">
+    <part name="confirmServiceDelivery" element="ns6:confirmServiceDelivery"></part>
+  </message>
+  <message name="generateTransactionToken">
+    <part name="generateTransactionToken" element="ns6:generateTransactionToken"></part>
+  </message>
+  <message name="getResponseTokenDetails">
+    <part name="getResponseTokenDetails" element="ns6:getResponseTokenDetails"></part>
+  </message>
+  <portType name="PaymentAPI">
+    <operation name="generateTransactionToken">
+      <input message="tns:generateTransactionToken"></input>
+      <output message="tns:generateTransactionTokenResponse"></output>
+    </operation>
+    <operation name="getResponseTokenDetails">
+      <input message="tns:getResponseTokenDetails"></input>
+      <output message="tns:getResponseTokenDetailsResponse"></output>
+    </operation>
+    <operation name="confirmServiceDelivery">
+      <input message="tns:confirmServiceDelivery"></input>
+      <output message="tns:confirmServiceDeliveryResponse"></output>
+    </operation>
+    <operation name="echo">
+      <input message="tns:echo"></input>
+      <output message="tns:echoResponse"></output>
+    </operation>
+  </portType>
+  <binding name="PaymentAPIServicePortBinding" type="tns:PaymentAPI">
+    <wsp:PolicyReference URI="#SignEncr"/>
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="generateTransactionToken">
+      <soap:operation soapAction="http://dsg.dubai.gov.ae/ws/epay/generateTransactionToken"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getResponseTokenDetails">
+      <soap:operation soapAction="http://dsg.dubai.gov.ae/ws/epay/getResponseTokenDetails"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="confirmServiceDelivery">
+      <soap:operation soapAction="http://dsg.dubai.gov.ae/ws/epay/confirmServiceDelivery"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="echo">
+      <soap:operation soapAction="http://dsg.dubai.gov.ae/ws/epay/echo"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="PaymentAPIService">
+    <port name="PaymentAPIServicePort" binding="tns:PaymentAPIServicePortBinding">
+      <soap:address location="https://epayment.qa.dubai.ae/ePayHub/processRequestAPI"/>
+    </port>
+  </service>
+</definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>https://epayment.qa.dubai.ae/ePayHub/WSDL/epay_schema.xsd</con:url><con:content><![CDATA[<xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://dsg.dubai.gov.ae/schema/epay" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://dsg.dubai.gov.ae/schema/epay" xmlns:common="http://dsg.dubai.gov.ae/schema/common">
+  <xsd:import namespace="http://dsg.dubai.gov.ae/schema/common" schemaLocation="common_types.xsd"/>
+  <xsd:element name="generateTransactionToken" type="GenerateTransactionToken"/>
+  <xsd:element name="generateTransactionTokenResponse" type="GenerateTransactionTokenResponse"/>
+  <xsd:element name="getResponseTokenDetails" type="GetResponseTokenDetails"/>
+  <xsd:element name="getResponseTokenDetailsResponse" type="GetResponseTokenDetailsResponse"/>
+  <xsd:element name="confirmServiceDelivery" type="ConfirmServiceDelivery"/>
+  <xsd:element name="confirmServiceDeliveryResponse" type="ConfirmServiceDeliveryResponse"/>
+  <xsd:element name="echo" type="Echo"/>
+  <xsd:element name="echoResponse" type="EchoResponse"/>
+  <xsd:complexType name="Echo">
+    <xsd:sequence>
+      <xsd:element name="word" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="EchoResponse">
+    <xsd:sequence>
+      <xsd:element name="word" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="GenerateTransactionToken">
+    <xsd:sequence>
+      <xsd:element name="transactionInfo" type="TransactionInfo"/>
+      <xsd:element minOccurs="0" name="userInfo" type="UserInfo"/>
+      <xsd:element minOccurs="0" name="serviceInfos" type="ServiceInfos"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="GenerateTransactionTokenResponse">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="uri" type="xsd:anyURI"/>
+      <xsd:element minOccurs="0" name="error" type="common:Error"/>
+    </xsd:sequence>
+    <xsd:attribute name="valid" type="xsd:boolean" use="required"/>
+  </xsd:complexType>
+  <xsd:complexType name="TransactionInfo">
+    <xsd:sequence>
+      <xsd:element name="spCode" type="xsd:string"/>
+      <xsd:element name="servCode" type="xsd:string"/>
+      <xsd:element name="sptrn" type="xsd:string"/>
+      <xsd:element name="amount" type="common:Amount"/>
+      <xsd:element name="timestamp" type="xsd:dateTime"/>
+      <xsd:element name="description" type="xsd:string"/>
+      <xsd:element name="type" type="PaymentType"/>
+      <xsd:element name="versionCode" type="xsd:string"/>
+      <xsd:element name="paymentChannel" type="PaymentChannel"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="PaymentChannel">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="100">
+        <xsd:annotation>
+          <xsd:documentation>Online Channel - Entry Point: Web Redirection</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="101">
+        <xsd:annotation>
+          <xsd:documentation>KIOSK - Entry Point: Web Service Integration</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="102">
+        <xsd:annotation>
+          <xsd:documentation>KIOSK - Entry Point: Web Service Integration</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="103">
+        <xsd:annotation>
+          <xsd:documentation>POS - Entry Point: Web Service Integration</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="104">
+        <xsd:annotation>
+          <xsd:documentation>MOBILE - Entry Point: Web Service Integration</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="UserInfo">
+    <xsd:annotation>
+      <xsd:documentation>User information from the Service Provider</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="isAuthenticated" type="xsd:boolean"/>
+      <xsd:element minOccurs="0" name="userId" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="userName" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="fullNameEn" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="fullNameAr" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="mobileNo" type="common:MobileNo"/>
+      <xsd:element minOccurs="0" name="email" type="common:Email"/>
+      <xsd:element minOccurs="0" name="nationalityCode" type="common:CountryCode"/>
+      <xsd:element minOccurs="0" name="emiratesId" type="common:EmiratesId"/>
+      <xsd:element minOccurs="0" name="emirateCode" type="common:EmirateCode"/>
+      <xsd:element minOccurs="0" name="poBox" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ServiceInfos">
+    <xsd:sequence>
+      <xsd:element maxOccurs="unbounded" name="service" type="ServiceInfo"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ServiceInfo">
+    <xsd:sequence>
+      <xsd:element name="serviceNameEn" type="xsd:string"/>
+      <xsd:element name="serviceNameAr" type="xsd:string"/>
+      <xsd:element name="serviceId" type="xsd:string"/>
+      <xsd:element name="gessServiceId" type="xsd:string"/>
+      <xsd:element name="beneficiaryInfos" type="BeneficiaryInfos"/>
+      <xsd:element name="additionalParams" type="common:Map"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="BeneficiaryInfos">
+    <xsd:sequence>
+      <xsd:element maxOccurs="unbounded" name="beneficiaryInfo" type="BeneficiaryInfo"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="BeneficiaryInfo">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="accountId" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="txnAmount" type="common:Amount"/>
+      <xsd:element minOccurs="0" name="fullNameEn" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="fullNameAr" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="mobileNo" type="common:MobileNo"/>
+      <xsd:element minOccurs="0" name="email" type="common:Email"/>
+      <xsd:element minOccurs="0" name="emiratesId" type="common:EmiratesId"/>
+      <xsd:element minOccurs="0" name="type" type="BeneficiaryType"/>
+      <xsd:element minOccurs="0" name="companyInfo" type="CompanyInfo"/>
+      <xsd:element minOccurs="0" name="additionalParams" type="common:Map"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="BeneficiaryType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="Individual"/>
+      <xsd:enumeration value="Corporate"/>
+      <xsd:enumeration value="Government"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="CompanyInfo">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="companyNameEn" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="companyNameAr" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="tradeLicenseNumber" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="licenseIssuingAuthority" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="GetResponseTokenDetails">
+    <xsd:sequence>
+      <xsd:element name="responseToken" type="xsd:string"/>
+      <xsd:element name="spCode" type="xsd:string"/>
+      <xsd:element name="servCode" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="GetResponseTokenDetailsResponse">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="spCode" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="servCode" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="sptrn" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="degTrn" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="txnTimestamp" type="xsd:dateTime"/>
+      <xsd:element minOccurs="0" name="paymentMethod" type="PaymentMethod"/>
+      <xsd:element minOccurs="0" name="message" type="common:Message"/>
+      <xsd:element minOccurs="0" name="error" type="common:Error"/>
+    </xsd:sequence>
+    <xsd:attribute name="valid" type="xsd:boolean"/>
+  </xsd:complexType>
+  <xsd:complexType name="ConfirmServiceDelivery">
+    <xsd:sequence>
+      <xsd:element name="spCode" type="xsd:string"/>
+      <xsd:element name="servCode" type="xsd:string"/>
+      <xsd:element name="sptrn" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="message" type="common:Message"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ConfirmServiceDeliveryResponse">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="error" type="common:Error"/>
+    </xsd:sequence>
+    <xsd:attribute name="valid" type="xsd:boolean"/>
+  </xsd:complexType>
+  <xsd:simpleType name="PaymentMethod">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="Not Selected"/>
+      <xsd:enumeration value="Credit Card"/>
+      <xsd:enumeration value="Edirham"/>
+      <xsd:enumeration value="Direct Debit"/>
+      <xsd:enumeration value="EdirhamG2"/>
+      <xsd:enumeration value="OneClick Pay"/>
+      <xsd:enumeration value="Wallet"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="PaymentType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="sale"/>
+      <xsd:enumeration value="authorize"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://epayment.qa.dubai.ae/ePayHub/WSDL/common_types.xsd</con:url><con:content><![CDATA[<xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://dsg.dubai.gov.ae/schema/common" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://dsg.dubai.gov.ae/schema/common">
+  <xsd:complexType name="Amount">
+    <xsd:simpleContent>
+      <xsd:extension base="AmountValue">
+        <xsd:attribute name="currency" type="CurrencyCode" use="required"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:simpleType name="AmountValue">
+    <xsd:restriction base="xsd:decimal">
+      <xsd:fractionDigits value="2"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="CurrencyCode">
+    <xsd:annotation>
+      <xsd:documentation>3-letter currency code see:
+				http://en.wikipedia.org/wiki/ISO_4217</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:minLength value="3"/>
+      <xsd:maxLength value="3"/>
+      <xsd:pattern value="[A-Z]{3}"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="CountryCode">
+    <xsd:annotation>
+      <xsd:documentation>3-letter country codes, see:
+				http://en.wikipedia.org/wiki/ISO_3166-1_alpha-3</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:minLength value="3"/>
+      <xsd:maxLength value="3"/>
+      <xsd:pattern value="[A-Z]{3}"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="MobileNo">
+    <xsd:restriction base="xsd:string">
+      <xsd:pattern value="\+?([0-9]{2})?([0-9]){7,15}"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="Email">
+    <xsd:restriction base="xsd:string">
+      <xsd:pattern value="[^@]+@[^\.]+\..+"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="EmiratesId">
+    <xsd:restriction base="xsd:string">
+      <xsd:minLength value="15"/>
+      <xsd:maxLength value="15"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="EmirateCode">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="AUH">
+        <xsd:annotation>
+          <xsd:documentation>Abu Dhabi</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="DXB">
+        <xsd:annotation>
+          <xsd:documentation>Dubai</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="SHJ">
+        <xsd:annotation>
+          <xsd:documentation>Sharjah</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="AJM">
+        <xsd:annotation>
+          <xsd:documentation>Ajman</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="UAQ">
+        <xsd:annotation>
+          <xsd:documentation>Umm Al Quwain</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="RAK">
+        <xsd:annotation>
+          <xsd:documentation>Ras Al Khaimah</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="FUJ">
+        <xsd:annotation>
+          <xsd:documentation>Fujairah</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="Map">
+    <xsd:sequence>
+      <xsd:element maxOccurs="unbounded" name="entry" type="Entry"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="Entry">
+    <xsd:sequence>
+      <xsd:element name="key" type="xsd:string"/>
+      <xsd:element name="value" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="Error">
+    <xsd:sequence>
+      <xsd:element name="code" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="message" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="Message">
+    <xsd:sequence>
+      <xsd:element name="code" type="xsd:int"/>
+      <xsd:element minOccurs="0" name="text" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://10.22.46.13:54546//ePay5PaymentApi/services/PaymentAPIService</con:endpoint><con:endpoint>https://epayment.qa.dubai.ae/ePayHub/processRequestAPI</con:endpoint></con:endpoints><con:operation id="ec7ca397-0cdb-4444-8146-ba99f9623a39" isOneWay="false" action="http://dsg.dubai.gov.ae/ws/epay/confirmServiceDelivery" name="confirmServiceDelivery" bindingOperationName="confirmServiceDelivery" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="60b11e75-cb31-4d31-baf1-6930254b6bd2" name="Request 1" outgoingWss="outgoing-security" incomingWss="incoming-security"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://epayment.qa.dubai.ae/ePayHub/processRequestAPI</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:com="http://dsg.dubai.gov.ae/schema/common" xmlns:epay="http://dsg.dubai.gov.ae/schema/epay" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">\r
+   <soapenv:Header>\r
+      <wsse:Security soapenv:mustUnderstand="1" xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">\r
+         <wsu:Timestamp wsu:Id="TS-44">\r
+            <wsu:Created>2019-02-24T06:18:58.832Z</wsu:Created>\r
+            <wsu:Expires>2019-02-24T06:19:58.832Z</wsu:Expires>\r
+         </wsu:Timestamp>\r
+      </wsse:Security>\r
+   </soapenv:Header>\r
+   <soapenv:Body>\r
+      <epay:confirmServiceDelivery>\r
+         <epay:spCode>ZFND</epay:spCode>\r
+         <epay:servCode>zakat</epay:servCode>\r
+         <epay:sptrn>15509884314657989169</epay:sptrn>\r
+         <!--Optional:-->\r
+         <epay:message>\r
+            <com:code>0</com:code>\r
+            <!--Optional:-->\r
+            <com:text>Successful Payment</com:text>\r
+         </epay:message>\r
+      </epay:confirmServiceDelivery>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://dsg.dubai.gov.ae/ws/epay/confirmServiceDelivery"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="70616e49-22b5-49cc-9855-02fb445561cd" isOneWay="false" action="http://dsg.dubai.gov.ae/ws/epay/echo" name="echo" bindingOperationName="echo" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="37ddf5ce-0891-45a7-822e-ff69108d835d" name="Request 1" outgoingWss="outgoing-security" incomingWss="incoming-security"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://epayment.qa.dubai.ae/ePayHub/processRequestAPI</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:epay="http://dsg.dubai.gov.ae/schema/epay">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <epay:echo>\r
+         <epay:word>ammananaa</epay:word>\r
+      </epay:echo>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>NTLM</con:addedBasicAuthenticationTypes><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://dsg.dubai.gov.ae/ws/epay/echo"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="751553e8-0ac6-4cb6-9d65-2bb7ac614adc" isOneWay="false" action="http://dsg.dubai.gov.ae/ws/epay/generateTransactionToken" name="generateTransactionToken" bindingOperationName="generateTransactionToken" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="14fe044e-0b42-4279-be0d-bde49d8de983" name="Request 1" outgoingWss="outgoing-security" incomingWss="incoming-security"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://epayment.qa.dubai.ae/ePayHub/processRequestAPI</con:endpoint><con:request><![CDATA[<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:com="http://dsg.dubai.gov.ae/schema/common" xmlns:epay="http://dsg.dubai.gov.ae/schema/epay" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+  <SOAP-ENV:Header>
+    <wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
+      <wsu:Timestamp wsu:Id="TS-34">
+        <wsu:Created>2021-10-31T10:19:11.684</wsu:Created>
+        <wsu:Expires>2021-10-31T12:19:11.687</wsu:Expires>
+      </wsu:Timestamp>
+    </wsse:Security>
+  </SOAP-ENV:Header>
+  <SOAP-ENV:Body>
+    <epay:generateTransactionToken>
+      <epay:transactionInfo>
+        <epay:spCode>ZFND</epay:spCode>
+        <epay:servCode>zakat</epay:servCode>
+        <epay:sptrn>937557</epay:sptrn>
+        <epay:amount currency="AED">10.00</epay:amount>
+        <epay:timestamp>2021-10-31T10:19:11.688+05:00</epay:timestamp>
+        <epay:description>Test Transaction100</epay:description>
+        <epay:type>sale</epay:type>
+        <epay:versionCode>2.1</epay:versionCode>
+        <epay:paymentChannel>100</epay:paymentChannel>
+      </epay:transactionInfo>
+      <epay:userInfo>
+        <epay:isAuthenticated>false</epay:isAuthenticated>
+        <epay:userId>32396</epay:userId>
+        <epay:userName>tester001</epay:userName>
+        <epay:fullNameEn>ing-e ca VanNister</epay:fullNameEn>
+        <epay:fullNameAr>first mid last</epay:fullNameAr>
+        <epay:mobileNo>97150332968</epay:mobileNo>
+        <epay:email>tstuser0@rta.com</epay:email>
+        <epay:emirateCode>DXB</epay:emirateCode>
+        <epay:poBox>PO</epay:poBox>
+      </epay:userInfo>
+    </epay:generateTransactionToken>
+  </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://dsg.dubai.gov.ae/ws/epay/generateTransactionToken"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="7c0783d1-24ba-477a-879f-407b0e6fffdb" isOneWay="false" action="http://dsg.dubai.gov.ae/ws/epay/getResponseTokenDetails" name="getResponseTokenDetails" bindingOperationName="getResponseTokenDetails" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="f2d757f4-cbb6-4746-b15b-c1de6ecaf780" name="Request 1" outgoingWss="outgoing-security" incomingWss="incoming-security"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://epayment.qa.dubai.ae/ePayHub/processRequestAPI</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:epay="http://dsg.dubai.gov.ae/schema/epay" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">\r
+   <soapenv:Header>\r
+      <wsse:Security soapenv:mustUnderstand="1" xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">\r
+         <wsu:Timestamp wsu:Id="TS-49">\r
+            <wsu:Created>2019-02-24T06:24:13.073Z</wsu:Created>\r
+            <wsu:Expires>2019-02-24T06:25:13.073Z</wsu:Expires>\r
+         </wsu:Timestamp>\r
+      </wsse:Security>\r
+   </soapenv:Header>\r
+   <soapenv:Body>\r
+      <epay:getResponseTokenDetails>\r
+         <epay:responseToken>ECF067C90405AF8E27C6CD45AA2189792A6347A38B8BE4D8BA95505F6AF5E9CBF05ECC58665AB5DC2EAD5333BC23653B02248313A1895202CECE8E359D1746F2D81470077EC3E97734C6BE852BA7AD9D05FAD3F86DE73E9A4482D4B871C253A4B410EA0C0694D8D825CE4BADF4C70C2E</epay:responseToken>\r
+         <epay:spCode>ZFND</epay:spCode>\r
+         <epay:servCode>zakat</epay:servCode>\r
+      </epay:getResponseTokenDetails>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://dsg.dubai.gov.ae/ws/epay/getResponseTokenDetails"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer><con:crypto><con:source>ePay5Client.jks</con:source><con:password>Change1$$</con:password><con:type>KEYSTORE</con:type><con:defaultAlias/></con:crypto><con:incoming><con:name>incoming-security</con:name><con:decryptCrypto>ePay5Client.jks</con:decryptCrypto><con:signatureCrypto>ePay5Client.jks</con:signatureCrypto><con:decryptPassword/></con:incoming><con:outgoing><con:name>outgoing-security</con:name><con:username/><con:password/><con:entry type="Timestamp"><con:configuration><timeToLive>60000</timeToLive><strictTimestamp>true</strictTimestamp></con:configuration></con:entry><con:entry type="Signature" username="epay5.simulator" password="Change1$$"><con:configuration><crypto>ePay5Client.jks</crypto><keyIdentifierType>2</keyIdentifierType><signatureAlgorithm/><signatureCanonicalization/><useSingleCert>false</useSingleCert><digestAlgorithm/><customTokenValueType/><customTokenId/></con:configuration></con:entry><con:entry type="Encryption" username="epay5.qa.dubai.ae" password="Change1$$"><con:configuration><crypto>ePay5Client.jks</crypto><keyIdentifierType>2</keyIdentifierType><symmetricEncAlgorithm/><encKeyTransport/><embeddedKeyName/><embeddedKeyPassword/><encryptionCanonicalization/><encryptSymmetricKey>true</encryptSymmetricKey></con:configuration></con:entry></con:outgoing></con:wssContainer><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>
